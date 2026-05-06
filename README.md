@@ -66,7 +66,7 @@ git clone  https://github.com/claudiodeveloper-github/projetos-futuros-java.git
 
 ## 📷 Preview
 
-*( Depois adicionarei um print do site! )*
+![Preview do projeto](preview.png)
 
 
 
