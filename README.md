@@ -57,7 +57,7 @@ Atuar no desenvolvimento backend com Java, contribuindo em projetos que exijam o
 1. Clone o repositório:
 
 ```
-git clone https://github.com/claudiodeveloper-github/Ola-Mundo.git
+git clone  https://github.com/claudiodeveloper-github/projetos-futuros-java.git
 ```
 
 2. Abra o arquivo `index.html` no navegador
