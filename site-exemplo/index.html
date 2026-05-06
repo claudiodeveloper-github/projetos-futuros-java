@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cláudio | Projetos</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+    }
+
+    header {
+      padding: 80px 20px;
+      text-align: center;
+      background: radial-gradient(circle at top, #1e293b, #020617);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p { opacity: 0.7; }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 25px;
+      border-radius: 14px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    h2 {
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .projeto {
+      background: #0f172a;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #334155;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.75rem;
+      background: #334155;
+      padding: 4px 8px;
+      border-radius: 5px;
+    }
+
+    .motivacao {
+      text-align: center;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 1px solid #334155;
+    }
+
+    #frase {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      min-height: 60px;
+      opacity: 0.9;
+      transition: opacity 0.3s;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #38bdf8;
+      border: none;
+      color: #020617;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #0ea5e9; }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cláudio Castro</h1>
+  <p>Desenvolvimento Backend com Java • Soluções Web</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Sobre</h2>
+    <p>
+      Desenvolvedor com experiência em Joomla, Drupal e Magento, com atuação em projetos web e manutenção de sistemas.
+      Atualmente direcionando o foco para desenvolvimento backend com Java e Spring Boot.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Tecnologias</h2>
+    <span class="tag">Java</span>
+    <span class="tag">Spring Boot</span>
+    <span class="tag">HTML</span>
+    <span class="tag">CSS</span>
+    <span class="tag">JavaScript</span>
+    <span class="tag">SQL</span>
+  </div>
+
+  <div class="card">
+    <h2>Projetos</h2>
+
+    <div class="grid">
+
+      <div class="projeto">
+        <h3>API REST</h3>
+        <p>Implementação de operações CRUD com organização em camadas.</p>
+        <span class="tag">Java</span>
+        <span class="tag">Spring Boot</span>
+      </div>
+
+      <div class="projeto">
+        <h3>Sistema Imobiliário</h3>
+        <p>Gerenciamento de dados voltado para aplicação acadêmica.</p>
+        <span class="tag">Java</span>
+        <span class="tag">SQL</span>
+      </div>
+
+      <div class="projeto">
+        <h3>Estudos Backend</h3>
+        <p>Prática de lógica e estrutura de aplicações.</p>
+        <span class="tag">Prática</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Objetivo</h2>
+    <p>
+      Atuar no desenvolvimento backend com Java, contribuindo em projetos que exijam organização, lógica e boas práticas de desenvolvimento.
+    </p>
+  </div>
+
+  <div class="card motivacao">
+    <h2>Motivação</h2>
+    <p id="frase"></p>
+    <button onclick="novaFrase()">Nova mensagem</button>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Cláudio</p>
+</footer>
+
+<script>
+  const frases = [
+    "Consistência gera resultado.",
+    "Todo sistema começa simples.",
+    "Resolver problemas é o foco.",
+    "Pequenos avanços fazem diferença.",
+    "A prática constrói domínio.",
+    "Disciplina supera motivação."
+  ];
+
+  let usadas = [];
+
+  function novaFrase() {
+    const el = document.getElementById("frase");
+
+    if (usadas.length === frases.length) {
+      usadas = [];
+    }
+
+    let i;
+    do {
+      i = Math.floor(Math.random() * frases.length);
+    } while (usadas.includes(i));
+
+    usadas.push(i);
+    el.textContent = frases[i];
+  }
+
+  // mostra uma frase ao carregar
+  novaFrase();
+</script>
+
+</body>
+</html>
